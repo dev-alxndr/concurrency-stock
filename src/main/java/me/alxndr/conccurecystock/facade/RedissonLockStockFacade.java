@@ -23,7 +23,6 @@ public class RedissonLockStockFacade {
 
     private final StockService stockService;
 
-    @Transactional
     public void decrease(Long id, Long quantity) {
 
         RLock lock = redissonClient.getLock(id.toString());
